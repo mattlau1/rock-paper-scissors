@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <script>
+        const plays = ["Rock", "Paper", "Scissors"];
+
+        function computerPlay() {
+            // random number between 0 and 2
+            return plays[Math.floor(Math.random() * 3)];
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            const p1Play = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1).toLowerCase();
+            const cpuPlay = computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1).toLowerCase();
+
+            const tieMsg = `It's a tie! ${p1Play} ties with ${cpuPlay}!`;
+            const winMsg = `You win! ${p1Play} beats ${cpuPlay}!`;
+            const loseMsg = `You lose! ${cpuPlay} beats ${p1Play}!`;
+            const errMsg = `Error: ${p1Play} and ${cpuPlay}`;
+            
+            if (p1Play === cpuPlay) {
+                // rock and rock
+                return tieMsg;
+
+            } else if (p1Play == plays[0] && cpuPlay == plays[2]) {
+                // p1 rock cpu scissors
+                return winMsg;
+
+            } else if (p1Play == plays[1] && cpuPlay == plays[2]) {
+                // p1 paper cpu scissors
+                return loseMsg;
+
+            } else if (p1Play == plays[0] && cpuPlay == plays[1]) {
+                // p1 rock cpu paper
+                return loseMsg;
+
+            } else if (p1Play == plays[2] && cpuPlay == plays[1]) {
+                // p1 scissors cpu paper
+                return winMsg;
+
+            } else if (p1Play == plays5[1] && cpuPlay == plays[0]) {
+                // p1 paper cpu rock
+                return winMsg;
+
+            } else if (p1Play == plays[2] && cpuPlay == plays[0]) {
+                // p1 scissors cpu rock
+                return loseMsg;
+
+            }
+            return errMsg;
+        }
+
+        function game(maxRounds) {
+
+            for (let i = 0; i < maxRounds; i++) {
+                let playerSelection = window.prompt("Scissors, Paper or Rock?");
+                let computerSelection = computerPlay();
+                console.log(playRound(playerSelection, computerSelection));
+            }
+        }
+
+        
+        game(5);
+
+
+    </script>
+</body>
