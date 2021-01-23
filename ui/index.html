@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <!-- Created by mattlau1 -->
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link rel="icon" type="image/png" href="img/icon.png"/>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg">
+        <h1 id="title">Rock Paper Scissors</h1>
+        <div id="wlContainer">
+            <h2 id="wlText"></h2>
+            <h2 id="endScore"></h2>
+            <button onClick="window.location.reload();">Restart</button>
+        </div>
+
+        <div id="game">
+            <div class="buttonContainer">
+                <button data-choice="scissors" class="sBtn"></button>
+                <button data-choice="paper" class="pBtn"></button>
+                <button data-choice="rock" class="rBtn"></button>
+            </div>
+        
+            <div class='choiceContainer'>
+                <h2>Player Choice</h2>
+                <h2>CPU Choice</h2>
+            </div>
+
+            <div class='choiceContainer'>
+                <span id='playerChoice'></span>
+                <span id='cpuChoice'></span>
+            </div>
+            
+            <div class='scoreContainer'>
+                <h2>Player Score</h2>
+                <h2>CPU Score</h2>
+            </div>
+
+            <div class='scoreContainer'>
+                <span id='playerScore'>0</span>
+                <span id='cpuScore'>0</span>
+            </div>
+        </div>
+        <p class="credits"><a href="https://github.com/mattlau1">By Matthew Lau</a></p>
+    </div>
+
+    <script src="game.js" type="text/javascript"></script>
+
+</body>
